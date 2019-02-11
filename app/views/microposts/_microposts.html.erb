@@ -15,7 +15,7 @@
           
           <div class="btn-group">
             <% if current_user.like?(micropost) %>
-              <%= link_to "Unlike", favorite_path( params: { favor_id: micropost.id }), method: :delete, data: { confirm: "You sure?" }, class: "btn, btn-danger btn-xs" %>
+              <%= link_to "Unlike", favorite_path(id: current_user.id, params: { favor_id: micropost.id }), method: :delete, data: { confirm: "You sure?" }, class: "btn, btn-danger btn-xs" %>
             <% else %>
               <%= link_to "Like", favorites_path( params: { favor_id: micropost.id }), method: :post, class: "btn, btn-primary btn-xs" %>
             <% end %>
