@@ -25,6 +25,6 @@
         <%= link_to likes_user_path(@user) do %>Likes <span class="badge"><%= @count_likes %></span><% end %>
       </li>
     </ul>
-    <%= render 'users', users: @followers %>
+    <%= render 'microposts/microposts', microposts: @likes %>
   </div>
 </div>
