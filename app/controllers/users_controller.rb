@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show, :followings, :followers, :likes]
   
   def index
-    @users = User.all.page(params[:page])
+    @users = User.where.not(id: current_user.id).page(params[:page])
   end
 
   def show
